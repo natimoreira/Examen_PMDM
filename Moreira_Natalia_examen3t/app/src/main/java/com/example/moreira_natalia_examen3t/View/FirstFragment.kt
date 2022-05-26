@@ -1,4 +1,4 @@
-package com.example.moreira_natalia_examen3t
+package com.example.moreira_natalia_examen3t.View
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -9,7 +9,8 @@ import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import android.widget.Toast
 import androidx.navigation.fragment.findNavController
-import com.example.moreira_natalia_examen3t.SpinnerProvider.Companion.listaEstilos
+import com.example.moreira_natalia_examen3t.Model.SpinnerProvider.Companion.listaEstilos
+import com.example.moreira_natalia_examen3t.R
 import com.example.moreira_natalia_examen3t.databinding.FragmentFirstBinding
 
 /**
@@ -36,9 +37,9 @@ class FirstFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        binding.buttonFirst.setOnClickListener {
-            findNavController().navigate(R.id.action_FirstFragment_to_SecondFragment)
-        }
+//        binding.buttonFirst.setOnClickListener {
+//            findNavController().navigate(R.id.action_FirstFragment_to_SecondFragment)
+//        }
         //llamamos las funciones de abajo
         cargarSpinner()
         funcionSpinner()
@@ -58,18 +59,31 @@ class FirstFragment : Fragment() {
     fun funcionSpinner(){
         binding.spinnerId.onItemSelectedListener = object : AdapterView.OnItemSelectedListener{
             override fun onItemSelected(p0: AdapterView<*>?, p1: View?, p2: Int, p3: Long) {
-                // esto muestra el nombre
-                binding.txtTexto.setText(binding.spinnerId.selectedItem.toString())
+                // cargamos el fragment con los diferentes géneros
+                val valorSpinner = binding.spinnerId.selectedItem
+                if (valorSpinner == "Rock"){
+                    findNavController().navigate(R.id.action_FirstFragment_to_SecondFragment)
+                }else if (valorSpinner == "Blues"){
+                    findNavController().navigate(R.id.action_FirstFragment_to_SecondFragment)
+                }else if (valorSpinner == "Jazz"){
+                    findNavController().navigate(R.id.action_FirstFragment_to_SecondFragment)
+                }else if (valorSpinner == "Varios"){
+                    findNavController().navigate(R.id.action_FirstFragment_to_SecondFragment)
+                }else{
+                    // esto muestra el nombre
+                    binding.txtTexto.setText(binding.spinnerId.selectedItem.toString())
+                }
+
                 // esto muestra la posición en el array
                 //binding.txtTexto.setText(binding.spinnerId.selectedItemPosition.toString())
                 // esto muestra el id
                 //binding.txtTexto.setText(binding.spinnerId.selectedItemId.toString())
 
                 // mostramos un toast al seleccionar un género
-                Toast.makeText(
-                    binding.root.context,
-                    binding.spinnerId.selectedItem.toString(),
-                    Toast.LENGTH_SHORT).show()
+//                Toast.makeText(
+//                    binding.root.context,
+//                    binding.spinnerId.selectedItem.toString(),
+//                    Toast.LENGTH_SHORT).show()
 
                 // mostramos un snackbar
                 //Snackbar.make(binding.root, "Mensaje", Snackbar.LENGTH_LONG).show()

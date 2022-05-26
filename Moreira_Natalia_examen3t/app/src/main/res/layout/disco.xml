@@ -2,7 +2,8 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/fondoUno"
+    android:id="@+id/fondo"
+    android:padding="30dp"
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
 
@@ -34,4 +35,29 @@
         app:layout_constraintStart_toEndOf="@+id/imgCaratula"
         app:layout_constraintTop_toBottomOf="@+id/textAlbum"
         tools:text="TextView" />
+
+    <Button
+        android:id="@+id/btnInfo"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        app:icon="@drawable/icon_info"
+        app:iconGravity="top"
+        app:iconPadding="0dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/btnEliminar"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
+        app:icon="@drawable/icon_borrar"
+        app:iconGravity="top"
+        app:iconPadding="0dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/btnInfo"
+        app:layout_constraintTop_toBottomOf="@+id/btnInfo" />
 </androidx.constraintlayout.widget.ConstraintLayout>

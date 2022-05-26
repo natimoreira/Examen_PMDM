@@ -1,4 +1,4 @@
-package com.example.moreira_natalia_examen3t
+package com.example.moreira_natalia_examen3t.View
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -8,6 +8,9 @@ import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.moreira_natalia_examen3t.ViewModel.DiscoAdapter
+import com.example.moreira_natalia_examen3t.Model.DiscoProvider
+import com.example.moreira_natalia_examen3t.R
 import com.example.moreira_natalia_examen3t.databinding.FragmentSecondBinding
 
 /**
@@ -34,9 +37,10 @@ class SecondFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        binding.buttonSecond.setOnClickListener {
-            findNavController().navigate(R.id.action_SecondFragment_to_FirstFragment)
-        }
+//        binding.buttonSecond.setOnClickListener {
+//            findNavController().navigate(R.id.action_SecondFragment_to_FirstFragment)
+//        }
+
         // Añadimos lo siguiente para llamar nuestro layout y adapter
         val recyclerView = view?.findViewById<RecyclerView>(R.id.recyclerId)
         recyclerView?.layoutManager = LinearLayoutManager(context)
